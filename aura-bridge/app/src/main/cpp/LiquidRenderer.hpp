@@ -5,7 +5,9 @@
 #define VK_USE_PLATFORM_ANDROID_KHR
 #endif
 
+#include <android/log.h>
 #include <android/native_window.h>
+#include <cstdint>
 #include <optional>
 #include <vector>
 #include <vulkan/vulkan.h>

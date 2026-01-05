@@ -1,6 +1,7 @@
 #include "LiquidRenderer.hpp"
 #include "aura_kernel.h"
 #include <android/log.h>
+#include <cstdint>
 #include <string>
 #include <vector>
 
