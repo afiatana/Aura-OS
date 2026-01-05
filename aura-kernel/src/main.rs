@@ -1,6 +1,9 @@
 use std::time::Instant;
 
+mod power;
 mod privacy;
+
+use power::PowerManager;
 use privacy::PrivacyShield;
 
 /// Tingkat keamanan privasi di Aura OS
@@ -38,6 +41,7 @@ pub struct KernelCore {
     pub privacy_level: PrivacyLevel,
     pub user_identity: AuraIdentity,
     pub privacy_shield: PrivacyShield,
+    pub power_manager: PowerManager,
 }
 
 impl KernelCore {
@@ -51,6 +55,7 @@ impl KernelCore {
             privacy_level: PrivacyLevel::High,
             user_identity: AuraIdentity::new(),
             privacy_shield: PrivacyShield::new(PrivacyLevel::High),
+            power_manager: PowerManager::new(),
         };
 
         println!(
@@ -58,6 +63,8 @@ impl KernelCore {
             core.user_identity.id
         );
         println!("- Privacy Shield: [ACTIVE] Level: {:?}", core.privacy_level);
+
+        core.power_manager.status_report();
 
         let sample_data = "user@example.com";
         println!(
