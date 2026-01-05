@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-
 #define LOG_TAG "LiquidRenderer"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
@@ -298,7 +297,34 @@ bool LiquidRenderer::createSyncObjects() {
   return true;
 }
 
+return true;
+}
+
+void LiquidRenderer::updateState(IslandState target, float deltaTime) {
+  // Logika Spring Physics untuk morphing UI
+  auto calculateSpring = [&](float current, float targetVal,
+                             float &velocity) -> float {
+    float force = -stiffness * (current - targetVal) - damping * velocity;
+    velocity += force * deltaTime;
+    return current + velocity * deltaTime;
+  };
+
+  currentState.width =
+      calculateSpring(currentState.width, target.width, currentVelocity.width);
+  currentState.height = calculateSpring(currentState.height, target.height,
+                                        currentVelocity.height);
+  currentState.x = calculateSpring(currentState.x, target.x, currentVelocity.x);
+  currentState.y = calculateSpring(currentState.y, target.y, currentVelocity.y);
+  currentState.cornerRadius =
+      calculateSpring(currentState.cornerRadius, target.cornerRadius,
+                      currentVelocity.cornerRadius);
+
+  LOGI("[LiquidRenderer] Morphing Update: W=%.2f, H=%.2f", currentState.width,
+       currentState.height);
+}
+
 void LiquidRenderer::render() {
+
   vkWaitForFences(device, 1, &inFlightFences[currentFrame], VK_TRUE,
                   UINT64_MAX);
   vkResetFences(device, 1, &inFlightFences[currentFrame]);

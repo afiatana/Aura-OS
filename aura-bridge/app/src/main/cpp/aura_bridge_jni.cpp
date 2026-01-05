@@ -7,7 +7,6 @@
 #include <jni.h>
 #include <string>
 
-
 #define LOG_TAG "AuraBridge"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 
@@ -46,6 +45,15 @@ JNIEXPORT void JNICALL Java_com_aura_bridge_AuraBridge_startLiquidIsland(
   } else {
     LOGI("[Aura Bridge] Failed to capture Native Window or Renderer not "
          "initialized.");
+  }
+}
+
+JNIEXPORT void JNICALL Java_com_aura_bridge_AuraBridge_updateIslandState(
+    JNIEnv *env, jobject thiz, jfloat width, jfloat height, jfloat x, jfloat y,
+    jfloat cornerRadius, jfloat deltaTime) {
+  if (g_renderer != nullptr) {
+    IslandState target = {width, height, x, y, cornerRadius};
+    g_renderer->updateState(target, deltaTime);
   }
 }
 }

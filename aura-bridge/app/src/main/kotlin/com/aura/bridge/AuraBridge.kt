@@ -21,6 +21,16 @@ class AuraBridge {
     /** Memulai rendering Liquid Island pada surface yang diberikan. */
     external fun startLiquidIsland(surface: Any)
 
+    /** Memperbarui dimensi dan posisi pulau dengan animasi spring physics. */
+    external fun updateIslandState(
+            width: Float,
+            height: Float,
+            x: Float,
+            y: Float,
+            cornerRadius: Float,
+            deltaTime: Float
+    )
+
     /** Callback dari AI Core untuk mengupdate animasi. */
     fun onAiUpdate(intensity: Float) {
         println("Aura Bridge: AI Intensity received -> $intensity")

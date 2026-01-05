@@ -10,6 +10,17 @@
 #include <vector>
 #include <vulkan/vulkan.h>
 
+/**
+ * @brief Status geometri pulau untuk animasi spring physics (Standard Master
+ * Context).
+ */
+struct IslandState {
+  float width;
+  float height;
+  float x;
+  float y;
+  float cornerRadius;
+};
 
 class LiquidRenderer {
 public:
@@ -18,6 +29,7 @@ public:
 
   bool init(ANativeWindow *window);
   void render();
+  void updateState(IslandState target, float deltaTime);
   void cleanup();
 
 private:
@@ -46,6 +58,12 @@ private:
   std::vector<VkSemaphore> renderFinishedSemaphores;
   std::vector<VkFence> inFlightFences;
   uint32_t currentFrame = 0;
+
+  // Spring Physics State
+  IslandState currentState;
+  IslandState currentVelocity;
+  const float stiffness = 150.0f;
+  const float damping = 20.0f;
 
   bool createInstance();
   bool setupDebugMessenger();
