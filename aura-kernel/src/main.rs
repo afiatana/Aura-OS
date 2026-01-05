@@ -1,8 +1,10 @@
 use std::time::Instant;
 
+mod memory_manager;
 mod power;
 mod privacy;
 
+use memory_manager::MemoryManager;
 use power::PowerManager;
 use privacy::PrivacyShield;
 
@@ -42,6 +44,7 @@ pub struct KernelCore {
     pub user_identity: AuraIdentity,
     pub privacy_shield: PrivacyShield,
     pub power_manager: PowerManager,
+    pub memory_manager: MemoryManager,
 }
 
 impl KernelCore {
@@ -50,12 +53,13 @@ impl KernelCore {
         println!("  AURA OS | RUST KERNEL | INITIALIZING    ");
         println!("------------------------------------------");
 
-        let core = Self {
+        let mut core = Self {
             version: "1.0.0-alpha.1",
             privacy_level: PrivacyLevel::High,
             user_identity: AuraIdentity::new(),
             privacy_shield: PrivacyShield::new(PrivacyLevel::High),
             power_manager: PowerManager::new(),
+            memory_manager: MemoryManager::new(1024 * 1024), // 1MB Kapasitas Kernel Awal
         };
 
         println!(
@@ -65,6 +69,12 @@ impl KernelCore {
         println!("- Privacy Shield: [ACTIVE] Level: {:?}", core.privacy_level);
 
         core.power_manager.status_report();
+
+        // Inisialisasi Alokasi Memori untuk Modul Keamanan
+        let _ = core
+            .memory_manager
+            .allocate_region(4096)
+            .expect("Gagal mengalokasi ruang memori untuk Shield");
 
         let sample_data = "user@example.com";
         println!(
