@@ -1,0 +1,10 @@
+[package]
+name = "aura-kernel"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "aura_kernel"
+crate-type = ["staticlib", "cdylib"]
+
+[dependencies]

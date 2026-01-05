@@ -1,0 +1,3 @@
+C:/Users/q3j5c/OneDrive/Desktop/Aura OS/aura-bridge/app/.cxx/Debug/371ke123/arm64-v8a/CMakeFiles/aura_bridge.dir
+C:/Users/q3j5c/OneDrive/Desktop/Aura OS/aura-bridge/app/.cxx/Debug/371ke123/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/q3j5c/OneDrive/Desktop/Aura OS/aura-bridge/app/.cxx/Debug/371ke123/arm64-v8a/CMakeFiles/rebuild_cache.dir

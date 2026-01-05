@@ -1,0 +1,40 @@
+name: Aura OS CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-kernel:
+    name: Build Rust Kernel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Build Kernel
+        run: |
+          cd aura-kernel
+          cargo build --verbose
+      - name: Run Tests
+        run: |
+          cd aura-kernel
+          cargo test --verbose
+
+  build-graphics-interface:
+    name: Build Graphics Logic (No-GPU Test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libglfw3-dev libvulkan-dev vulkan-tools
+      - name: Check CMake
+        run: cmake --version
+      - name: Configure CMake
+        run: |
+          cd aura-graphics
+          cmake . -B build

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "C:/Users/q3j5c/OneDrive/Desktop/Aura OS/aura-bridge/app/.cxx/Debug/q252x1o1/x86_64",
+  "command": "C:\\Users\\q3j5c\\AppData\\Local\\Android\\Sdk\\ndk\\29.0.14206865\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android24 --sysroot=C:/Users/q3j5c/AppData/Local/Android/Sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Daura_bridge_EXPORTS -I\"C:/Users/q3j5c/OneDrive/Desktop/Aura OS/aura-bridge/app/src/main/cpp/../../../../../aura-graphics\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\aura_bridge.dir\\aura_bridge_jni.cpp.o -c \"C:\\Users\\q3j5c\\OneDrive\\Desktop\\Aura OS\\aura-bridge\\app\\src\\main\\cpp\\aura_bridge_jni.cpp\"",
+  "file": "C:\\Users\\q3j5c\\OneDrive\\Desktop\\Aura OS\\aura-bridge\\app\\src\\main\\cpp\\aura_bridge_jni.cpp"
+}
+]

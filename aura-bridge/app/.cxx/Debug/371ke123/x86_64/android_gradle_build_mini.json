@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "C:\\Users\\q3j5c\\OneDrive\\Desktop\\Aura OS\\aura-bridge\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\q3j5c\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\q3j5c\\OneDrive\\Desktop\\Aura OS\\aura-bridge\\app\\.cxx\\Debug\\371ke123\\x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\q3j5c\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\q3j5c\\OneDrive\\Desktop\\Aura OS\\aura-bridge\\app\\.cxx\\Debug\\371ke123\\x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "aura_bridge::@6890427a1f51a3e7e1df": {
+      "artifactName": "aura_bridge",
+      "abi": "x86_64",
+      "output": "C:\\Users\\q3j5c\\OneDrive\\Desktop\\Aura OS\\aura-bridge\\app\\build\\intermediates\\cxx\\Debug\\371ke123\\obj\\x86_64\\libaura_bridge.so",
+      "runtimeFiles": []
+    }
+  }
+}

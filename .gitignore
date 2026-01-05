@@ -1,0 +1,40 @@
+# Aura OS Git Ignore
+
+# Build Artifacts
+build/
+bin/
+out/
+target/
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.pdb
+
+# Dependencies
+node_modules/
+.pixi/
+pixi.lock
+vendor/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android
+.gradle/
+local.properties
+aura-bridge/app/build/
+aura-bridge/build/
+aura-bridge/captures/
+aura-bridge/.externalNativeBuild/
+aura-bridge/.cxx/
+aura-bridge/app/src/main/jniLibs/

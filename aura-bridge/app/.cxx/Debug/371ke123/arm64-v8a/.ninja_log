@@ -1,0 +1,5 @@
+# ninja log v5
+2	6272	7892700334280009	CMakeFiles/aura_bridge.dir/aura_bridge_jni.cpp.o	aafaf36188007d00
+42	2559	7892708857118262	CMakeFiles/aura_bridge.dir/aura_bridge_jni.cpp.o	aafaf36188007d00
+51	2986	7892708861358836	CMakeFiles/aura_bridge.dir/LiquidRenderer.cpp.o	799ca3371f9c2bd4
+2987	3184	7892708863230206	C:/Users/q3j5c/OneDrive/Desktop/Aura OS/aura-bridge/app/build/intermediates/cxx/Debug/371ke123/obj/arm64-v8a/libaura_bridge.so	1877ea32cfe07a96

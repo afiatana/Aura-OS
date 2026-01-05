@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "214905851470",
+    "project_id": "aura-os-2847f",
+    "storage_bucket": "aura-os-2847f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214905851470:android:6e20db89bfbd8fd372bd1f",
+        "android_client_info": {
+          "package_name": "com.aura.bridge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXZ5-iAvdjDCKm2IDwrS7iGtysYW4ugAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
